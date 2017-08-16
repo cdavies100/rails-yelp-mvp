@@ -9,16 +9,18 @@
 
 <%= simple_form_for(@restaurant) do |f| %>
   <%= f.error_notification %>
+  <div class="col-md-6 col-md-offset-3">
 
   <div class="form-inputs">
     <%= f.input :name %>
     <%= f.input :address %>
     <%= f.input :phone_number %>
-    <%= f.input :category %>
+    <%= f.input :category, collection: ["chinese", "italian", "japanese", "french", "belgian", "american"] %>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit %>
+    <%= f.button :submit, class: 'btn btn-info' %>
+  </div>
   </div>
 <% end %>
 </div>

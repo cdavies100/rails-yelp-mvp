@@ -1,11 +1,11 @@
-<h1>Reviews#new</h1>
-<p>Find me in app/views/reviews/new.html.erb</p>
 <div class="container">
+<div class="col-md-6 col-md-offset-3">
   <h1>You're writing a review for <%= @restaurant.name %></h1>
 
   <%= simple_form_for [@restaurant, @review] do |f| %>
     <%= f.input :content %>
     <%= f.input :rating, collection: 0..5 %>
-    <%= f.submit %>
+    <%= f.submit class: 'btn' %>
   <% end %>
+</div>
 </div>

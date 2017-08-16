@@ -1,33 +1,31 @@
-<h1>Restaurants#index</h1>
-<p>Find me in app/views/restaurants/index.html.erb</p>
+<div class="container">
 
-<h1>Restaurant List</h1>
+  <h1>Restaurant List</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Address</th>
-      <th>Telephone</th>
-      <th>Category</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @restaurants.each do |restaurant| %>
+  <table>
+    <thead>
       <tr>
-        <td><%= restaurant.name %></td>
-        <td><%= restaurant.address %></td>
-        <td><%= restaurant.phone_number %></td>
-        <td><%= restaurant.category %></td>
-        <td><%= link_to 'Show', restaurant %></td>
-        <!-- <td><%= link_to 'Destroy', restaurant, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
+        <th>Name</th>
+        <th>Address</th>
+        <th>Telephone</th>
+        <th>Category</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+      <% @restaurants.each do |restaurant| %>
+        <tr>
+          <td><%= restaurant.name %></td>
+          <td><%= restaurant.address %></td>
+          <td><%= restaurant.phone_number %></td>
+          <td><%= restaurant.category %></td>
+          <td><%= link_to 'Show', restaurant, class: 'btn btn-success' %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<br>
+  <br>
 
-<%= link_to 'New Restaurant', new_restaurant_path %>
+  <%= link_to 'New Restaurant', new_restaurant_path, class: 'btn btn-info' %>
+</div>
