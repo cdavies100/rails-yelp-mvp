@@ -23,7 +23,7 @@ class RestaurantsController < ApplicationController
   def create
     @restaurant = Restaurant.new(restaurant_params)
     if @restaurant.save # return false if validations don't pass
-      redirect_to new_restaurant_path#(@restaurant)
+      redirect_to restaurant_path(@restaurant)
     else
       render :new
     end
@@ -43,8 +43,7 @@ class RestaurantsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def restaurant_params
-      params.require(:restaurant).permit(:name, :address, :category)
+      params.require(:restaurant).permit(:name, :address, :phone_number, :category)
     end
-
 
 end
